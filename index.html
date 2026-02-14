@@ -1,79 +1,89 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Valentine Special ❤️</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Will You Be My Valentine? ❤️</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+            background: linear-gradient(to right, #ff758c, #ff7eb3);
+            margin-top: 100px;
+            overflow: hidden;
+        }
 
-<style>
-body{
-    margin:0;
-    padding:0;
-    text-align:center;
-    font-family:Arial;
-    background: linear-gradient(to right,#ff758c,#ff7eb3);
-    color:white;
-}
+        h1 {
+            font-size: 40px;
+            color: white;
+        }
 
-.container{
-    margin-top:60px;
-}
+        .btn {
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+            margin: 20px;
+            border-radius: 10px;
+        }
 
-h1{
-    font-size:35px;
-}
+        #yesBtn {
+            background-color: red;
+            color: white;
+        }
 
-img{
-    width:250px;
-    border-radius:20px;
-    margin-top:20px;
-}
+        #noBtn {
+            background-color: black;
+            color: white;
+            position: absolute;
+        }
 
-button{
-    padding:12px 25px;
-    font-size:18px;
-    background:white;
-    color:#ff4d6d;
-    border:none;
-    border-radius:30px;
-    margin-top:20px;
-    cursor:pointer;
-}
-button:hover{
-    background:#ff4d6d;
-    color:white;
-}
-</style>
+        #message {
+            display: none;
+            font-size: 30px;
+            margin-top: 30px;
+            color: white;
+            animation: pop 0.5s ease-in-out;
+        }
+
+        @keyframes pop {
+            0% { transform: scale(0); }
+            100% { transform: scale(1); }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="container">
+    <h1>Will You Be My Valentine? 💖</h1>
 
-<!-- ✍️ EDIT NAME HERE -->
-<h1>Prakhar ❤️ Patanjali</h1>
+    <button id="yesBtn" class="btn" onclick="showMessage()">Yes ❤️</button>
+    <button id="noBtn" class="btn" onmouseover="moveButton()">No 😜</button>
 
-<!-- ✍️ EDIT MESSAGE HERE -->
-<p>You are my forever and always 💖</p>
+    <div id="message">
+        💌 Yayyyyy!!!  
+        You just made me the happiest person alive! ❤️😍  
+        I promise unlimited love, chocolates & cuddles forever 💕
+    </div>
 
-<!-- 📸 PUT YOUR IMAGE LINK HERE -->
-<img src="PUT_YOUR_IMAGE_LINK_HERE">
+    <!-- 🎵 Background Song -->
+    <audio id="bgMusic">
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
 
-<br>
+    <script>
+        function showMessage() {
+            document.getElementById("message").style.display = "block";
+            document.getElementById("bgMusic").play();
+        }
 
-<button onclick="showMessage()">Click Here 💌</button>
+        function moveButton() {
+            var button = document.getElementById("noBtn");
+            var x = Math.random() * (window.innerWidth - 100);
+            var y = Math.random() * (window.innerHeight - 50);
 
-</div>
-
-<!-- 🎵 PUT YOUR MUSIC LINK HERE -->
-<audio autoplay loop>
-<source src="PUT_YOUR_MUSIC_LINK_HERE" type="audio/mp3">
-</audio>
-
-<script>
-function showMessage(){
-    alert("Write your special message here ❤️");
-}
-</script>
+            button.style.left = x + "px";
+            button.style.top = y + "px";
+        }
+    </script>
 
 </body>
 </html>
